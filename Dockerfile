@@ -1,7 +1,7 @@
 FROM alpine:2.7
 MAINTAINER victor.biga@gmail.com
 RUN apk --update add nginx php-fpm
-RUN mkdir -p /tmp/nginx && echo "clear_env = no" >> /etc/php/php-fpm.conf
+RUN mkdir -p /tmp/nginx /etc/php && echo "clear_env = no" >> /etc/php/php-fpm.conf
 ADD www /www
 ADD nginx.conf /etc/nginx/
 EXPOSE 80
